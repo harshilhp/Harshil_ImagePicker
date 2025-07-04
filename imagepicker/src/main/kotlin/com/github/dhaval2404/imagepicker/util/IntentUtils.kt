@@ -69,7 +69,7 @@ object IntentUtils {
      * @return Intent Camera Intent
      */
     @JvmStatic
-    fun getCameraIntent(context: Context, file: File): Intent? {
+    fun getCameraIntent(context: Context, file: File): Intent {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

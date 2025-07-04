@@ -17,10 +17,10 @@ import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.dhaval2404.imagepicker.sample.util.FileUtil
 import com.github.dhaval2404.imagepicker.sample.util.IntentUtil
 import com.github.dhaval2404.imagepicker.util.IntentUtils
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_camera_only.*
-import kotlinx.android.synthetic.main.content_gallery_only.*
-import kotlinx.android.synthetic.main.content_profile.*
+//import kotlinx.android.synthetic.main.activity_main.*
+//import kotlinx.android.synthetic.main.content_camera_only.*
+//import kotlinx.android.synthetic.main.content_gallery_only.*
+//import kotlinx.android.synthetic.main.content_profile.*
 import java.io.File
 
 class MainActivity : AppCompatActivity() {
@@ -42,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-        imgProfile.setDrawableImage(R.drawable.ic_person, true)
+//        setSupportActionBar(toolbar)
+//        imgProfile.setDrawableImage(R.drawable.ic_person, true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -165,15 +165,15 @@ class MainActivity : AppCompatActivity() {
             when (requestCode) {
                 PROFILE_IMAGE_REQ_CODE -> {
                     mProfileUri = uri
-                    imgProfile.setLocalImage(uri, true)
+//                    imgProfile.setLocalImage(uri, true)
                 }
                 GALLERY_IMAGE_REQ_CODE -> {
                     mGalleryUri = uri
-                    imgGallery.setLocalImage(uri)
+//                    imgGallery.setLocalImage(uri)
                 }
                 CAMERA_IMAGE_REQ_CODE -> {
                     mCameraUri = uri
-                    imgCamera.setLocalImage(uri)
+//                    imgCamera.setLocalImage(uri)
                 }
             }
         } else if (resultCode == ImagePicker.RESULT_ERROR) {
@@ -184,39 +184,39 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showImageCode(view: View) {
-        val resource = when (view) {
-            imgProfileCode -> R.drawable.img_profile_code
-            imgCameraCode -> R.drawable.img_camera_code
-            imgGalleryCode -> R.drawable.img_gallery_code
-            else -> 0
-        }
-        ImageViewerDialog.newInstance(resource).show(supportFragmentManager, "")
+//        val resource = when (view) {
+//            imgProfileCode -> R.drawable.img_profile_code
+//            imgCameraCode -> R.drawable.img_camera_code
+//            imgGalleryCode -> R.drawable.img_gallery_code
+//            else -> 0
+//        }
+        ImageViewerDialog.newInstance(R.drawable.img_profile_code).show(supportFragmentManager, "")
     }
 
     fun showImage(view: View) {
-        val uri = when (view) {
-            imgProfile -> mProfileUri
-            imgCamera -> mCameraUri
-            imgGallery -> mGalleryUri
-            else -> null
-        }
+//        val uri = when (view) {
+//            imgProfile -> mProfileUri
+//            imgCamera -> mCameraUri
+//            imgGallery -> mGalleryUri
+//            else -> null
+//        }
 
-        uri?.let {
-            startActivity(IntentUtils.getUriViewIntent(this, uri))
+        mProfileUri?.let {
+            startActivity(IntentUtils.getUriViewIntent(this, it))
         }
     }
 
     fun showImageInfo(view: View) {
-        val uri = when (view) {
-            imgProfileInfo -> mProfileUri
-            imgCameraInfo -> mCameraUri
-            imgGalleryInfo -> mGalleryUri
-            else -> null
-        }
+//        val uri = when (view) {
+//            imgProfileInfo -> mProfileUri
+//            imgCameraInfo -> mCameraUri
+//            imgGalleryInfo -> mGalleryUri
+//            else -> null
+//        }
 
         AlertDialog.Builder(this)
             .setTitle("Image Info")
-            .setMessage(FileUtil.getFileInfo(this, uri))
+            .setMessage(FileUtil.getFileInfo(this, mProfileUri))
             .setPositiveButton("Ok", null)
             .show()
     }

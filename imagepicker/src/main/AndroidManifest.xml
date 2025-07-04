@@ -7,8 +7,12 @@
             android:screenOrientation="unspecified"
             android:theme="@style/Theme.Transparent.ImagePicker" />
 
+<!--                <activity-->
+<!--                    android:name="com.yalantis.ucrop.UCropActivity"-->
+<!--                    android:screenOrientation="portrait"-->
+<!--                    android:theme="@style/Theme.AppCompat.Light.NoActionBar" />-->
         <activity
-            android:name="com.yalantis.ucrop.UCropActivity"
+            android:name="com.github.dhaval2404.imagepicker.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 

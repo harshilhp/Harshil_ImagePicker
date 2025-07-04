@@ -9,8 +9,8 @@ import android.util.Log
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.dhaval2404.imagepicker.ImagePickerActivity
 import com.github.dhaval2404.imagepicker.R
+import com.github.dhaval2404.imagepicker.UCrop
 import com.github.dhaval2404.imagepicker.util.FileUtil
-import com.yalantis.ucrop.UCrop
 import java.io.File
 import java.io.IOException
 
