@@ -148,6 +148,9 @@ class CropProvider(activity: ImagePickerActivity) : BaseProvider(activity) {
      */
     @Suppress("UNUSED_PARAMETER")
     fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        Log.e("ImagePicker", "onActivityResult: requestCode = $requestCode", )
+        Log.e("ImagePicker", "onActivityResult: resultCode = $resultCode", )
+        Log.e("ImagePicker", "onActivityResult: data = $data", )
         if (requestCode == UCrop.REQUEST_CROP) {
             if (resultCode == Activity.RESULT_OK) {
                 handleResult(mCropImageFile)

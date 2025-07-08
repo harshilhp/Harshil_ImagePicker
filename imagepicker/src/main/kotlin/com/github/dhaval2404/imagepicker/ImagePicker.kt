@@ -3,6 +3,7 @@ package com.github.dhaval2404.imagepicker
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.github.dhaval2404.imagepicker.constant.ImageProvider
 import com.github.dhaval2404.imagepicker.listener.DismissListener
@@ -349,6 +350,8 @@ open class ImagePicker {
                 putLong(EXTRA_IMAGE_MAX_SIZE, maxSize)
 
                 putString(EXTRA_SAVE_DIRECTORY, saveDir)
+
+                Log.e("ImagePicker", "getBundle: saveDir = $saveDir" )
             }
         }
 
