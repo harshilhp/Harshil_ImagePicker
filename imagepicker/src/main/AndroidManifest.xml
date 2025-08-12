@@ -5,11 +5,13 @@
         <activity
             android:name=".ImagePickerActivity"
             android:screenOrientation="unspecified"
+            android:exported="true"
             android:theme="@style/Theme.Transparent.ImagePicker" />
 
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/CropperTheme" />
 
         <provider
